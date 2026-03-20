@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trešnje Kljajo – Domaće trešnje iz Vojna, Mostar</title>
+  <meta name="description" content="Svježe domaće trešnje iz Vojna, Hercegovina. Dostava Mostar i okolica. Naručite putem WhatsApp-a!">
+  <meta property="og:title" content="Trešnje Kljajo – Domaće trešnje iz Vojna">
+  <meta property="og:description" content="Svježe ubrano direktno iz voćnjaka. Dostava Mostar i okolica.">
+  <meta property="og:image" content="hero.png">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="">
+  <link rel="preload" as="image" href="hero.png">
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: Arial, sans-serif; line-height:1.6; }
+
+    header {
+      position: fixed;
+      width: 100%;
+      background: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    header a { text-decoration:none; color:black; margin-left:20px; font-weight:bold; transition:color 0.2s; }
+    header a:hover, header a.active { color: red; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 5px;
+    }
+    .hamburger span { display:block; width:25px; height:3px; background:#111; border-radius:3px; transition:0.3s; }
+
+    .hero {
+      height: 100vh;
+      background: url('hero.png') center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+    }
+
+    .hero-content { position: relative; z-index:2; }
+
+    .hero h1 { font-size: 3rem; }
+    .hero p { margin: 15px 0; font-size:1.2rem; }
+
+    .btn {
+      background: red;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: 0.3s;
+      display:inline-block;
+      margin-top:10px;
+    }
+
+    .btn:hover { background: darkred; }
+
+    section { padding: 80px 20px; text-align:center; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+      gap: 15px;
+    }
+
+    .grid img {
+      width:100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius:10px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .grid img:hover { transform: scale(1.05); }
+
+    .features {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:20px;
+      margin-top:20px;
+    }
+
+    .feature-box {
+      background:#f8f8f8;
+      padding:20px;
+      border-radius:10px;
+      width:250px;
+    }
+
+    iframe { width:100%; height:300px; border:none; border-radius:10px; }
+
+    footer {
+      background:#111;
+      color:white;
+      padding:20px;
+      text-align:center;
+    }
+
+    #lightbox {
+      display:none;
+      position:fixed;
+      top:0; left:0;
+      width:100%; height:100%;
+      background:rgba(0,0,0,0.8);
+      justify-content:center;
+      align-items:center;
+      z-index: 2000;
+    }
+
+    #lightbox img { max-width:90%; max-height:80%; border-radius:8px; }
+
+    #lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      line-height: 1;
+    }
+
+    .fade { opacity:0; transform:translateY(30px); transition:1s; }
+    .fade.show { opacity:1; transform:translateY(0); }
+
+    .whatsapp-float {
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      background:#25D366;
+      color:white;
+      padding:15px 20px;
+      border-radius:50px;
+      text-decoration:none;
+      font-weight:bold;
+      box-shadow:0 5px 15px rgba(0,0,0,0.3);
+      z-index:1000;
+    }
+
+    @media(max-width:600px) {
+      .hero h1 { font-size:2rem; }
+
+      .hamburger { display:flex; }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: white;
+        width: 100%;
+        padding: 10px 20px 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      }
+
+      nav.open { display:flex; }
+      nav a { margin: 8px 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h2>🍒 Trešnje Kljajo</h2>
+  <button class="hamburger" aria-label="Otvori meni" aria-expanded="false" onclick="toggleNav(this)">
+    <span></span><span></span><span></span>
+  </button>
+  <nav id="main-nav">
+    <a href="#hero">Početna</a>
+    <a href="#galerija">Galerija</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+</header>
+
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <h1>Domaće trešnje iz Vojna</h1>
+    <p>Svježe ubrano – direktno iz voćnjaka</p>
+    <p>🔥 Ograničene količine – zatraži cijenu!</p>
+    <a href="https://wa.me/38763841397" class="btn">Zatraži cijenu</a>
+  </div>
+</section>
+
+<section class="fade">
+  <h2>Zašto odabrati naše trešnje?</h2>
+  <div class="features" role="list">
+    <div class="feature-box" role="listitem">🍒 100% domaće i svježe</div>
+    <div class="feature-box" role="listitem">☀️ Uzgojeno u Hercegovini</div>
+    <div class="feature-box" role="listitem">🚚 Dostava Mostar i okolica</div>
+  </div>
+</section>
+
+<section id="galerija" class="fade">
+  <h2>Galerija</h2>
+  <div class="grid" id="gallery-grid"></div>
+</section>
+
+<section class="fade">
+  <h2>Kako naručiti?</h2>
+  <p>Kliknite na dugme ispod i pošaljite poruku za dostupne vrste i cijene.</p>
+  <a href="https://wa.me/38763841397" class="btn">Pošalji upit</a>
+</section>
+
+<section class="fade">
+  <h2>Lokacija</h2>
+  <iframe
+    src="https://www.google.com/maps?q=43.4104981,17.8710911&output=embed"
+    title="Lokacija – Vojno, Mostar"
+    loading="lazy"
+    sandbox="allow-scripts allow-same-origin"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</section>
+
+<section id="kontakt" class="fade">
+  <h2>Kontakt</h2>
+  <p>📞 <a href="tel:+38763841397">063 841 397</a></p>
+  <p>📲 WhatsApp & Viber dostupni</p>
+</section>
+
+<footer>
+  <p>© 2026 Trešnje Kljajo</p>
+</footer>
+
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Pregled slike">
+  <button id="lightbox-close" aria-label="Zatvori" onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt="Uvećana slika trešanja">
+</div>
+
+<a href="https://wa.me/38763841397" class="whatsapp-float" aria-label="Naruči putem WhatsApp-a">💬 Naruči</a>
+
+<script>
+  const galleryImages = ['50.png','51.png','100.png','101.png','102.png','103.png','top.png'];
+  const galleryGrid = document.getElementById('gallery-grid');
+
+  galleryImages.forEach((src, i) => {
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = `Trešnje Kljajo – slika ${i + 1}`;
+    img.loading = 'lazy';
+    img.width = 400;
+    img.height = 220;
+    img.onclick = () => openLightbox(src);
+    galleryGrid.appendChild(img);
+  });
+
+  function openLightbox(src) {
+    const lb = document.getElementById('lightbox');
+    document.getElementById('lightbox-img').src = src;
+    lb.style.display = 'flex';
+    lb.focus();
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+
+  // IntersectionObserver for fade-in animations
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+
+  // Active nav link on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav a');
+
+  const navObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+      }
+    });
+  }, { threshold: 0.5 });
+
+  sections.forEach(s => navObserver.observe(s));
+
+  function toggleNav(btn) {
+    const nav = document.getElementById('main-nav');
+    const open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  }
+</script>
+
+</body>
+</html>
