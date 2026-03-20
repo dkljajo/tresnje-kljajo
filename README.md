@@ -17,6 +17,15 @@ Ovo je profesionalna web stranica za prodaju domaćih trešanja. Stranica je diz
 
 ---
 
+## 🛠️ Tehnologije korištene
+
+* **HTML5** – Semantička struktura stranice
+* **CSS3** – Styling, Flexbox, Grid, animacije, responsive dizajn
+* **JavaScript (Vanilla JS)** – Carousel, scrolling efekti, galerija lightbox
+* **Google Maps Embed** – Prikaz lokacije voćnjaka
+
+---
+
 ## 📂 Struktura projekta
 
 ```
@@ -32,53 +41,11 @@ Tresnje-Kljajo/
 
 ---
 
-## 🚀 Instalacija i pokretanje
-
-Ako želiš lokalno pregledati stranicu:
-
-1. Kloniraj repozitorij:
-
-```bash
-git clone git@github.com:dkljajo/tresnje-kljajo.git
-```
-
-2. Uđi u folder:
-
-```bash
-cd tresnje-kljajo
-```
-
-3. Otvori `index.html` u pregledniku ili koristi lokalni server (npr. VS Code Live Server).
-
----
-
-## 🌐 Objavljivanje na GitHub Pages
-
-1. Pushaj sve datoteke u main branch:
-
-```bash
-git add .
-git commit -m "Prva verzija web stranice"
-git push -u origin main
-```
-
-2. GitHub Pages Settings:
-
-* Branch: `main`
-* Folder: `/ (root)`
-* Klikni **Save**
-
-Link za pregled stranice: `https://dkljajo.github.io/tresnje-kljajo/`
-
-> Napomena: **index.html mora biti u root folderu**.
-
----
-
-## 📸 Dodavanje slika
+## 📸 Galerija i hero slika
 
 * Hero slika: `hero.jpg`
 * Galerija: sve slike navedene u `galleryFolder` nizu u `index.html`
-* Klikom na slike se otvara lightbox.
+* Klikom na slike se otvara lightbox
 
 ---
 
