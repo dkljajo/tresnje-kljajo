@@ -61,3 +61,7 @@ Tresnje-Kljajo/
 * Objavi link stranice na Instagram i Facebook
 * Hero slika i WhatsApp dugme odmah privlače narudžbe
 * Dodaj ograničene količine i “zatraži cijenu” opciju za veći konverzijski efekt
+
+## LINK:
+
+https://dkljajo.github.io/tresnje-kljajo/
